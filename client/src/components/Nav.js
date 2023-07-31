@@ -9,7 +9,7 @@ function Nav() {
     <>
       <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/home" style={{fontFamily:"sans-serif"}}>
+    <a class="navbar-brand" href="/" style={{fontFamily:"sans-serif"}}>
     <img src={logo}  class="mt-1 mb-1" style={{width:"25px",height:"25px",marginRight:"10px"}} alt="Logo" />
      Epidemic Sound
       </a>
