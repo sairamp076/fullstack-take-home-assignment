@@ -30,3 +30,91 @@
   color: #fff;
   border-bottom: 2px solid #009de0;
 }
+
+
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  margin: 0;
+}
+
+.content {
+  text-align: center;
+  border-color: white;
+  background: none;
+  border: none;
+}
+
+.addButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 20%;
+  font-size: 60px;
+  color: black;
+}
+
+.movingBorder {
+  width: 500px;
+  height: 200px;
+  position: relative;
+  background: #111;
+  padding: 4px;
+}
+.movingBorder::before,
+.movingBorder::after {
+  content: "";
+  position: absolute;
+  inset: -0.2rem;
+  z-index: -1;
+  background: linear-gradient(var(--angle), 
+    #032146,  #C3F2FF, #b00);
+  animation: rotate 10s linear infinite;
+}
+.movingBorder::after {
+  filter: blur(10px);
+}
+@keyframes rotate {
+  0%     { --angle: 0deg; }
+  100%   { --angle: 360deg;
+  }
+}
+.addNewButtonHome{
+  position: fixed;
+    bottom: 80px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    font-size: 30px;
+    color: black;
+}
+.addNewButton
+{
+    position: fixed;
+    bottom: 20px;
+    right: 120px;
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    font-size: 30px;
+    color: black;
+}
+
+.addNewButtonPlay
+{
+    position: fixed;
+    bottom: 120px;
+    right: 60px;
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    font-size: 30px;
+    color: black;
+}

@@ -1,12 +1,9 @@
 import React from "react";
 import styles from "./TrackRow.module.css";
 
-function TrackRow({ track, handlePlay }) {
+function PlayListTrackRows({ track, handlePlay,handleRemoveElement }) {
   return (
-  
-  
-    <tr>
-      <th scope="row">
+    <div className={styles.trackRow}>
       <button className={styles.trackPlay} onClick={() => handlePlay(track)}>
         <svg
           width="24"
@@ -18,17 +15,17 @@ function TrackRow({ track, handlePlay }) {
           <path d="M20 12L8 5V19L20 12Z" fill="white" />
         </svg>
       </button>
-        </th>
-      <td>
-      <div className={styles.trackTitle}>{track.title}</div>
+      <div className={styles.trackInfo}>
+        <div className={styles.trackTitle} style={{color:"black"}}>{track.title}</div>
         <div className={styles.trackArtist}>
           {track.main_artists.join(", ")}
         </div>
-      </td>
-      <td>{track.genres}</td>
-      <td>{(track.length/60).toFixed(2)} min</td>
-    </tr>
+      </div>
+      <button class="btn btn-secondary rounded-pill" onClick={() =>  handleRemoveElement(track.id)} style={{marginLeft:"auto"}}>
+        Remove
+      </button>
+    </div>
   );
 }
 
-export default TrackRow;
+export default PlayListTrackRows;

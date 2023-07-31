@@ -48,3 +48,12 @@ class Track(models.Model):
     @property
     def spotify(self):
         return "{}{}/{}".format(settings.DSP_BASE, self.id, "spotify")
+
+class Playlist(models.Model):
+    id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    tracks = models.ManyToManyField(Track, related_name='playlists')
+
+    def __str__(self):
+        return self.title
